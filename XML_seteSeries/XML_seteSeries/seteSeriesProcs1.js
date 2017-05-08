@@ -1,6 +1,7 @@
-﻿//inicialização
+﻿//seteSeriesProcs1.js *********************************************************
+//inicialização
 function inic() {
-    document.write(
-        tituloCol()
-    );
+  document.write(
+    tituloColSeries()
+  );
 }
