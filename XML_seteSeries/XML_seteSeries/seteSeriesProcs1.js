@@ -21,8 +21,14 @@ function listTest1() {
         document.write('<br/><b>Género: </b>');
         for (var j = 0; j < numGenSerie(i) ; j++) {
             document.write(genSerie(i, j));
-            if (j != numGenSerie(i)-1 && numGenSerie(i) > 1)
+            if (j != numGenSerie(i) - 1 && numGenSerie(i) > 1)
                 document.write(", ");
         }
-    }
+        document.write('<br/><b>Elenco: </b>');
+        for (var j = 0; j < numAtorSerie(i) ; j++) {
+            document.write(actorSerie(i, j));
+            if (j != numAtorSerie(i) - 1 && numAtorSerie(i) > 1)
+                document.write(", ");
+        }
+    }   
 }

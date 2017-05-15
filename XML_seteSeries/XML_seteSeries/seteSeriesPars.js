@@ -88,3 +88,60 @@ function genSerie(s,g) {
     var genero = serie.getElementsByTagName("generos")[0].getElementsByTagName("genero")[g];
     return genero.childNodes[0].nodeValue;
 }
+
+//Extrai as informações do link da wikipédia
+function urlWikiSerie(s) {
+    var serie = docXML.getElementsByTagName("serie")[s];
+    return serie.getElementsByTagName("webLinks")[0].getElementsByTagName("link")[0].getAttribute("url");
+}
+
+function logoWiki() {
+    var serie = docXML.getElementsByTagName("serie")[0];
+    return "SeteSeries/" + serie.getElementsByTagName("webLinks")[0].getElementsByTagName("link")[0].getAttribute("logo");
+}
+
+//Extrai as informações do link da YouTube
+function urlYtSerie(s) {
+    var serie = docXML.getElementsByTagName("serie")[s];
+    return serie.getElementsByTagName("webLinks")[0].getElementsByTagName("link")[1].getAttribute("url");
+}
+
+function logoYt() {
+    var serie = docXML.getElementsByTagName("serie")[0];
+    return "SeteSeries/" + serie.getElementsByTagName("webLinks")[0].getElementsByTagName("link")[1].getAttribute("logo");
+}
+
+//Extrai as informações do link da IMDB
+function urlImdbSerie(s) {
+    var serie = docXML.getElementsByTagName("serie")[s];
+    return serie.getElementsByTagName("webLinks")[0].getElementsByTagName("link")[2].getAttribute("url");
+}
+
+function logoImdb() {
+    var serie = docXML.getElementsByTagName("serie")[0];
+    return "SeteSeries/" + serie.getElementsByTagName("webLinks")[0].getElementsByTagName("link")[2].getAttribute("logo");
+}
+
+//Extrai informações sobre os atores
+function numAtorSerie(s) {
+    var serie = docXML.getElementsByTagName("serie")[s];
+    return serie.getElementsByTagName("elenco")[0].getElementsByTagName("ator").length;
+}
+
+function actorSerie(s, a) {
+    var serie = docXML.getElementsByTagName("serie")[s];
+    var ator = serie.getElementsByTagName("elenco")[0].getElementsByTagName("ator")[a];
+    return ator.childNodes[0].nodeValue;
+}
+
+//Extrai informações sobre a sinópse
+function numParSinSerie(s) {
+    var serie = docXML.getElementsByTagName("serie")[s];
+    return serie.getElementsByTagName("sinopse")[0].getElementsByTagName("parag").length;
+}
+
+function parSinSerie(s, p) {
+    var serie = docXML.getElementsByTagName("serie")[s];
+    var ator = serie.getElementsByTagName("sinopse")[0].getElementsByTagName("parag")[a];
+    return ator.childNodes[0].nodeValue;
+}
